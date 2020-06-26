@@ -1,0 +1,56 @@
+conda create -n tf-gpu tensorflow-gpu
+conda activate tf-gpu
+pip install gym
+pip install -U ray==0.7.7
+pip install setproctitle
+pip install psutil
+pip install gputil
+conda install -c anaconda pandas
+
+conda activate tf-gpu
+jupyter notebook
+
+sudo openvpn --config student01.ovpn
+ip a show tun0
+
+ssh no IP 10.220.198.215. Se estiver usando o Windows, recomendo o Putty. No Linux é direto.
+Usuário: root
+Senha: Do92UnFtnAMxkBV4
+Debian 10
+pip install tabulate
+pip install ray[tune]
+pip install opencv-python
+apt-get install libgtk2.0-dev -y
+pip install lz4
+
+
+
+tensorboard --logdir=~/ray_results
+
+python run_neurocuts.py --rules=acl1_10k,fw1_10k,ipc1_10k --partition-mode=efficuts  --dump-dir=/tmp/trees --num-workers=7 --gpu
+
+python run_neurocuts.py --rules=acl1_100k,acl1_10k,acl1_1k,acl2_100k,acl2_10k,acl2_1k,acl3_100k,acl3_10k,acl3_1k,acl4_100k,acl4_10k,acl4_1k,acl5_100k,acl5_10k,acl5_1k,fw1_100k,fw1_10k,fw1_1k,fw2_100k,fw2_10k,fw2_1k,fw3_100k,fw3_10k,fw3_1k,fw4_100k,fw4_10k,fw4_1k,fw5_100k,fw5_10k,fw5_1k,ipc1_100k,ipc1_10k,ipc1_1k,ipc2_100k,ipc2_10k,ipc2_1k  --dump-dir=/tmp/trees --num-workers=7 --gpu
+
+
+python run_neurocuts.py --rules=acl5_1k --dump-dir=/tmp/trees --num-workers=7 --gpu --fast -checkpoint-freq=1
+
+python run_baselines.py expr > experimentos.txt
+
+python run_neurocuts.py --rules=acl1_1k --dump-dir=/tmp/trees --num-workers=7 --gpu --fast --partition-mode=efficuts
+python run_neurocuts.py --rules=acl1_1k --dump-dir=/tmp/trees --num-workers=7 --gpu --fast --partition-mode=simple
+python run_neurocuts.py --rules=acl1_1k --dump-dir=/tmp/trees --num-workers=7 --gpu --fast --partition-mode=cutsplit
+
+
+python run_neurocuts.py --rules=acl2_1k --dump-dir=/tmp/trees --num-workers=7 --gpu --fast --partition-mode=simple
+
+python run_neurocuts.py --rules=acl1_10k --dump-dir=/tmp/trees --num-workers=7 --gpu --partition-mode=simple
+
+
+
+python run_baselines.py gen_result experimentos.txt 
+
+
+
+
+
+ 
