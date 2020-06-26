@@ -248,7 +248,7 @@ def load_rules_from_file(file_name):
                 proto_end + 1
             ]))
     
-    #print("valor EB: ", valoreb, "valor original: ", valoro) 
+    print("valor EB: ", valoreb, "valor original: ", valoro) 
     
     return rules
 
