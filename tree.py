@@ -124,24 +124,46 @@ def retornaEB(endereco):
     if s4 == 0:
         if s4 == 0 and s3 == 0:
             if s4 == 0 and s3 == 0 and s2 == 0:
-                    s_inicial = reomoveEB(st[0:8])
+                    s_inicial = removeEB(st[0:8])
             else:
-                s_inicial = st[0:8] + reomoveEB(st[8:16])
+                s_inicial = st[0:8] + removeEB(st[8:16])
         else:
-           s_inicial = st[0:16] + reomoveEB(st[16:24])
+           s_inicial = st[0:16] + removeEB(st[16:24])
     else:
-       s_inicial = st[0:24] + reomoveEB(st[24:32])
+       s_inicial = st[0:24] + removeEB(st[24:32])
+    
+    #Problema da conversão de decimal com zeros a esquerda
+    s_inicial = '1' + s_inicial
     
     #print ("Aqui 7", s_inicial)
+    #print ("Tamanho", len(s_inicial))
     
     return converterb_d(s_inicial)
+
+#Retorna para o endereço eb
+def retornaOriginal(endereco):
+    st = divideBy2(endereco)
+    st = st[1:]
+
+    if len(st) <= 8:
+       st = retornaB(st) + retornaB('0') + retornaB('0') + retornaB('0')
+    elif len(st) > 8 and len(st) <= 16: 
+       st = st[0:8] + retornaB(st[8:len(st)]) + retornaB('0') + retornaB('0')
+    elif len(st) > 16 and len(st) <= 24: 
+       st = st[0:16] + retornaB(st[16:len(st)]) + retornaB('0')
+    else:
+       st = st[0:24] + retornaB(st[24:len(st)])
+    
+    #print ("Aqui 4-Original", st)
+    return converterb_d(st)
+
 
 #Retorna os efetivos bytes (eb)
 def len_st(endereco):
     st = divideBy2(endereco)    
     return len(st)
     
-def reomoveEB(sessao):
+def removeEB(sessao):
     #print("Aqui 5",  sessao)
     valor = 0
     comparar = True
@@ -156,9 +178,14 @@ def reomoveEB(sessao):
             valoreb += caracter
     
     #print("Aqui 6-EB",  valoreb)
-    
     return valoreb
-        
+
+def retornaB(sessao):
+    valorb = '00000000' + sessao
+    valorb = valorb[len(valorb)-8:len(valorb)]
+    #print("Aqui 6-B",  valorb)
+    return valorb
+
 
 def load_rules_from_file(file_name):
     rules = []
@@ -168,6 +195,8 @@ def load_rules_from_file(file_name):
         r'(\d+) : (\d+) ' \
         r'(0x[\da-fA-F]+)/(0x[\da-fA-F]+) ' \
         r'(.*?)')
+    valoreb = 0
+    valoro = 0
     for idx, line in enumerate(open(file_name)):
         elements = line[1:-1].split('\t')
         line = line.replace('\t', ' ')
@@ -184,8 +213,11 @@ def load_rules_from_file(file_name):
         sip_begin = sip0 & (~((1 << (32 - sip_mask_len)) - 1))
         sip_end = sip0 | ((1 << (32 - sip_mask_len)) - 1)
         
-        print ("Sip - Endereco incial:", retornaEB(sip_begin), ipaddress.IPv4Address(retornaEB(sip_begin)), sip_begin, ipaddress.IPv4Address(sip_begin))
-        print ("Sip - Endereco final:", retornaEB(sip_end), ipaddress.IPv4Address(retornaEB(sip_end)), sip_end, ipaddress.IPv4Address(sip_end))
+        #print ("Sip - Endereco incial:", retornaEB(sip_begin), ipaddress.IPv4Address(retornaEB(sip_begin)), sip_begin, ipaddress.IPv4Address(sip_begin), retornaOriginal(retornaEB(sip_begin)), ipaddress.IPv4Address(retornaOriginal(retornaEB(sip_begin))))
+        
+        #print ("Sip - Endereco final:", retornaEB(sip_end), ipaddress.IPv4Address(retornaEB(sip_end)), sip_end, ipaddress.IPv4Address(sip_end))
+        
+        valoro += len_st(sip_begin) + len_st(sip_end)
         sip_begin = retornaEB(sip_begin)
         sip_end = retornaEB(sip_end)
         
@@ -193,24 +225,31 @@ def load_rules_from_file(file_name):
         dip_begin = dip0 & (~((1 << (32 - dip_mask_len)) - 1))
         dip_end = dip0 | ((1 << (32 - dip_mask_len)) - 1)
         
-        print ("Dip - Endereco incial:", retornaEB(dip_begin))
-        print ("Dip - Endereco final:", retornaEB(dip_end))
+        valoro += len_st(dip_begin) + len_st(dip_end)
+        
+        #print ("Dip - Endereco incial:", retornaEB(dip_begin))
+        #print ("Dip - Endereco final:", retornaEB(dip_end))
         dip_begin = retornaEB(dip_begin)
         dip_end = retornaEB(dip_begin)
-
+        
+        valoreb += len_st(sip_begin) + len_st(sip_end)+len_st(dip_begin)+len_st(dip_end)
+        
         if proto_mask == 0xff:
             proto_begin = proto
             proto_end = proto
         else:
             proto_begin = 0
             proto_end = 0xff
-        print ("Aqui", idx, sip_begin, sip_end + 1, dip_begin, dip_end + 1, sport_begin,sport_end + 1, dport_begin, dport_end + 1, proto_begin, proto_end + 1)
+        #print ("Aqui", idx, sip_begin, sip_end + 1, dip_begin, dip_end + 1, sport_begin,sport_end + 1, dport_begin, dport_end + 1, proto_begin, proto_end + 1)
         rules.append(
             Rule(idx, [
                 sip_begin, sip_end + 1, dip_begin, dip_end + 1, sport_begin,
                 sport_end + 1, dport_begin, dport_end + 1, proto_begin,
                 proto_end + 1
             ]))
+    
+    #print("valor EB: ", valoreb, "valor original: ", valoro) 
+    
     return rules
 
 
