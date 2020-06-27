@@ -98,6 +98,14 @@ def run_all():
                 cuts.train()
 
 
+def run_all_eb():
+    j_list = ["1k","10k", "100k"]
+    for i in seed_files:
+        for j in j_list:
+            print("%s Rules %s_%s" % (datetime.datetime.now(), i, j))
+            rules = load_rules_from_file("neurocuts-master/classbench/%s_%s" % (i, j))
+
+                
 def run_all_hicuts(files_type):
     # seed_files = ["ipc2_seed"]
     if files_type == "acl":
@@ -253,6 +261,8 @@ if __name__ == "__main__":
         #run_hypercuts()
         #run_efficuts()
         #run_cutsplit()
+    elif sys.argv[1] == "eb":
+        run_all_eb()
     elif sys.argv[1] == "gen_result":
         gen_result(sys.argv[2])
     else:

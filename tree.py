@@ -197,6 +197,7 @@ def load_rules_from_file(file_name):
         r'(.*?)')
     valoreb = 0
     valoro = 0
+    valoridx = 0
     for idx, line in enumerate(open(file_name)):
         elements = line[1:-1].split('\t')
         line = line.replace('\t', ' ')
@@ -233,6 +234,7 @@ def load_rules_from_file(file_name):
         dip_end = retornaEB(dip_begin)
         
         valoreb += len_st(sip_begin) + len_st(sip_end)+len_st(dip_begin)+len_st(dip_end)
+        valoridx = idx
         
         if proto_mask == 0xff:
             proto_begin = proto
@@ -248,7 +250,7 @@ def load_rules_from_file(file_name):
                 proto_end + 1
             ]))
     
-    print("valor EB: ", valoreb, "valor original: ", valoro) 
+    print("Numero de Endereços:", valoridx*4, "valor EB: ", valoreb, "valor original: ", valoro,"Percentual", (valoro/valoreb-1)*100, "bit(s) por endereço:", (valoro-valoreb)/(valoridx*4)) 
     
     return rules
 
