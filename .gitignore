@@ -1,0 +1,4 @@
+out_*.txt
+valid_trees*.txt
+__pycache__/
+trees_26_06/

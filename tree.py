@@ -821,6 +821,16 @@ class Tree:
             nodes = nodes_copy
         return nodes
 
+    def size_of_rule(self, rules):
+        # http://teachweb.milin.cc/datacommunicatie/tcp_ip-osi_model.htm
+        # rule_len = len(ip src) + 4 bytes (32bits) ip (v4) dst + 
+        # 2 bytes port src + 2 bytes dts port + 1 byte proto
+        # rule_len = 9 bytes + len(ip_src)
+        sum_size = 0
+        for rule in rules:
+            sum_size += 9 + len_st(rule.ranges[0])
+        return sum_size
+
     def compute_result(self):
         if self.refinements["rule_pushup"]:
             self.refinement_rule_pushup()
@@ -843,7 +853,8 @@ class Tree:
 
                 # compute bytes per rule
                 if self.is_leaf(node):
-                    result["bytes_per_rule"] += 2 + 16 * len(node.rules)
+                    #result["bytes_per_rule"] += 2 + 16 * len(node.rules)
+                    result["bytes_per_rule"] += 2 + self.size_of_rule(node.rules)
                     result["num_leaf_node"] += 1
                 else:
                     result["bytes_per_rule"] += 2 + 16 + 4 * len(node.children)
