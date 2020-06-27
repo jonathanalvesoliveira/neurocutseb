@@ -254,9 +254,9 @@ def load_rules_from_file(file_name):
 
 
 def to_bits(value, n):
-    if value >= 2**n:
-        print("WARNING: clamping value", value, "to", 2**n - 1)
-        value = 2**n - 1
+    # if value >= 2**n:
+    #     print("WARNING: clamping value", value, "to", 2**n - 1)
+    #     value = 2**n - 1
     assert value == int(value)
     b = list(bin(int(value))[2:])
     assert len(b) <= n, (value, b, n)
@@ -363,23 +363,26 @@ class Node:
 
     def get_state(self):
         state = []
-        state.extend(to_bits(self.ranges[0], 32))
-        state.extend(to_bits(self.ranges[1] - 1, 32))
-        state.extend(to_bits(self.ranges[2], 32))
-        state.extend(to_bits(self.ranges[3] - 1, 32))
+        state.extend(to_bits(self.ranges[0], 33))
+        state.extend(to_bits(self.ranges[1] - 1, 33))
+        state.extend(to_bits(self.ranges[2], 33))
+        state.extend(to_bits(self.ranges[3] - 1, 33))
         #state.extend(to_bits(self.ranges[0], len_st(self.ranges[0])))
         #state.extend(to_bits(self.ranges[1] - 1, len_st(self.ranges[1]-1)))
         #state.extend(to_bits(self.ranges[2], len_st(self.ranges[2])))
         #state.extend(to_bits(self.ranges[3] - 1, len_st(self.ranges[3]-1)))
-        assert len(state) == 128, len(state)
+        #assert len(state) == 128, len(state)
+        assert len(state) == 132, len(state)
         state.extend(to_bits(self.ranges[4], 16))
         state.extend(to_bits(self.ranges[5] - 1, 16))
         state.extend(to_bits(self.ranges[6], 16))
         state.extend(to_bits(self.ranges[7] - 1, 16))
-        assert len(state) == 192, len(state)
+        #assert len(state) == 192, len(state)
+        assert len(state) == 196, len(state)
         state.extend(to_bits(self.ranges[8], 8))
         state.extend(to_bits(self.ranges[9] - 1, 8))
-        assert len(state) == 208, len(state)
+        #assert len(state) == 208, len(state)
+        assert len(state) == 212, len(state)
 
         if self.manual_partition is None:
             # 0, 6 -> 0-64%
@@ -444,7 +447,7 @@ class Tree:
 
         self.rules = rules
         self.root = self.create_node(
-            0, [0, 2**32, 0, 2**32, 0, 2**16, 0, 2**16, 0, 2**8], rules, 1,
+            0, [0, 2**33, 0, 2**32, 0, 2**16, 0, 2**16, 0, 2**8], rules, 1,
             None, None)
         if (self.refinements["region_compaction"]):
             self.refinement_region_compaction(self.root)
@@ -543,7 +546,7 @@ class Tree:
 
         small_rules = []
         big_rules = []
-        max_size = [2**32, 2**32, 2**16, 2**16, 2**8][part_dim]
+        max_size = [2**33, 2**33, 2**16, 2**16, 2**8][part_dim]
         threshold = max_size * 0.02 * 2**part_size  # 2% ... 64%
         for rule in node.rules:
             if fits(rule, threshold):

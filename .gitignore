@@ -1,4 +1,6 @@
 out_*.txt
 valid_trees*.txt
 __pycache__/
-trees_26_06/
+trees_26_06/*.pkl
+NeuroCuts-Original/trees_27_06/*.pkl
+NeuroCuts-Original/__pycache__/
