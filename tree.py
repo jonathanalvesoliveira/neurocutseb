@@ -830,10 +830,11 @@ class Tree:
         # http://teachweb.milin.cc/datacommunicatie/tcp_ip-osi_model.htm
         # rule_len = len(ip src) + len(ip_dst) + 
         # 2 bytes port src + 2 bytes dts port + 1 byte proto
-        # rule_len = 9 bytes + len(ip_src)
+        # rule_len = 5 bytes + len(ip_src) + len(ip_dst)
         sum_size = 0
         for rule in rules:
             sum_size += 5 + len_st(rule.ranges[0])/8 + len_st(rule.ranges[2])/8
+            sum_size += 5 + len_st(rule.ranges[1])/8 + len_st(rule.ranges[3])/8
         return sum_size
 
     def compute_result(self):

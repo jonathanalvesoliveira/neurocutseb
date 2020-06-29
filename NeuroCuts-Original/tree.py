@@ -696,12 +696,13 @@ class Tree:
 
     def size_of_rule(self, rules):
         # http://teachweb.milin.cc/datacommunicatie/tcp_ip-osi_model.htm
-        # rule_len = len(ip src) + 4 bytes (32bits) ip (v4) dst + 
+        # rule_len = len(ip src) + len(ip_dst) + 
         # 2 bytes port src + 2 bytes dts port + 1 byte proto
-        # rule_len = 9 bytes + len(ip_src)
+        # rule_len = 5 bytes + len(ip_src) + len(ip_dst)
         sum_size = 0
         for rule in rules:
-            sum_size += 9 + len_st(rule.ranges[0])
+            sum_size += 5 + len_st(rule.ranges[0])/8 + len_st(rule.ranges[2])/8
+            sum_size += 5 + len_st(rule.ranges[1])/8 + len_st(rule.ranges[3])/8
         return sum_size
 
 
@@ -728,10 +729,10 @@ class Tree:
                 # compute bytes per rule
                 if self.is_leaf(node):
                     #result["bytes_per_rule"] += 2 + 16 * len(node.rules)
-                    result["bytes_per_rule"] += 2 + self.size_of_rule(node.rules)#16 * len(node.rules)
+                    result["bytes_per_rule"] += 2 + self.size_of_rule(node.rules)
                     result["num_leaf_node"] += 1
                 else:
-                    result["bytes_per_rule"] += 2 + 16 + 4 * len(node.children)
+                    result["bytes_per_rule"] += 2 + self.size_of_rule(node.rules) + 4 * len(node.children)
                     result["num_nonleaf_node"] += 1
 
             nodes = next_layer_nodes
