@@ -256,9 +256,9 @@ def load_rules_from_file(file_name):
 
 
 def to_bits(value, n):
-    if value >= 2**n:
-        print("WARNING: clamping value", value, "to", 2**n - 1)
-        value = 2**n - 1
+    # if value >= 2**n:
+    #     print("WARNING: clamping value", value, "to", 2**n - 1)
+    #     value = 2**n - 1
     assert value == int(value)
     b = list(bin(int(value))[2:])
     assert len(b) <= n, (value, b, n)
@@ -365,23 +365,26 @@ class Node:
 
     def get_state(self):
         state = []
-        state.extend(to_bits(self.ranges[0], 32))
-        state.extend(to_bits(self.ranges[1] - 1, 32))
-        state.extend(to_bits(self.ranges[2], 32))
-        state.extend(to_bits(self.ranges[3] - 1, 32))
+        state.extend(to_bits(self.ranges[0], 33))
+        state.extend(to_bits(self.ranges[1] - 1, 33))
+        state.extend(to_bits(self.ranges[2], 33))
+        state.extend(to_bits(self.ranges[3] - 1, 33))
         #state.extend(to_bits(self.ranges[0], len_st(self.ranges[0])))
         #state.extend(to_bits(self.ranges[1] - 1, len_st(self.ranges[1]-1)))
         #state.extend(to_bits(self.ranges[2], len_st(self.ranges[2])))
         #state.extend(to_bits(self.ranges[3] - 1, len_st(self.ranges[3]-1)))
-        assert len(state) == 128, len(state)
+        #assert len(state) == 128, len(state)
+        assert len(state) == 132, len(state)
         state.extend(to_bits(self.ranges[4], 16))
         state.extend(to_bits(self.ranges[5] - 1, 16))
         state.extend(to_bits(self.ranges[6], 16))
         state.extend(to_bits(self.ranges[7] - 1, 16))
-        assert len(state) == 192, len(state)
+        #assert len(state) == 192, len(state)
+        assert len(state) == 196, len(state)
         state.extend(to_bits(self.ranges[8], 8))
         state.extend(to_bits(self.ranges[9] - 1, 8))
-        assert len(state) == 208, len(state)
+        #assert len(state) == 208, len(state)
+        assert len(state) == 212, len(state)
 
         if self.manual_partition is None:
             # 0, 6 -> 0-64%
@@ -446,7 +449,7 @@ class Tree:
 
         self.rules = rules
         self.root = self.create_node(
-            0, [0, 2**32, 0, 2**32, 0, 2**16, 0, 2**16, 0, 2**8], rules, 1,
+            0, [0, 2**33, 0, 2**33, 0, 2**16, 0, 2**16, 0, 2**8], rules, 1,
             None, None)
         if (self.refinements["region_compaction"]):
             self.refinement_region_compaction(self.root)
@@ -545,7 +548,7 @@ class Tree:
 
         small_rules = []
         big_rules = []
-        max_size = [2**32, 2**32, 2**16, 2**16, 2**8][part_dim]
+        max_size = [2**33, 2**33, 2**16, 2**16, 2**8][part_dim]
         threshold = max_size * 0.02 * 2**part_size  # 2% ... 64%
         for rule in node.rules:
             if fits(rule, threshold):
@@ -825,12 +828,13 @@ class Tree:
 
     def size_of_rule(self, rules):
         # http://teachweb.milin.cc/datacommunicatie/tcp_ip-osi_model.htm
-        # rule_len = len(ip src) + 4 bytes (32bits) ip (v4) dst + 
+        # rule_len = len(ip src) + len(ip_dst) + 
         # 2 bytes port src + 2 bytes dts port + 1 byte proto
-        # rule_len = 9 bytes + len(ip_src)
+        # rule_len = 5 bytes + len(ip_src) + len(ip_dst)
         sum_size = 0
         for rule in rules:
-            sum_size += 9 + len_st(rule.ranges[0])
+            sum_size += 5 + len_st(rule.ranges[0])/8 + len_st(rule.ranges[2])/8
+            sum_size += 5 + len_st(rule.ranges[1])/8 + len_st(rule.ranges[3])/8
         return sum_size
 
     def compute_result(self):
@@ -859,7 +863,7 @@ class Tree:
                     result["bytes_per_rule"] += 2 + self.size_of_rule(node.rules)
                     result["num_leaf_node"] += 1
                 else:
-                    result["bytes_per_rule"] += 2 + 16 + 4 * len(node.children)
+                    result["bytes_per_rule"] += 2 + self.size_of_rule(node.rules) + 4 * len(node.children)
                     result["num_nonleaf_node"] += 1
 
             nodes = next_layer_nodes
