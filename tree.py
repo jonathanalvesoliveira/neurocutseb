@@ -859,11 +859,14 @@ class Tree:
 
                 # compute bytes per rule
                 if self.is_leaf(node):
-                    result["bytes_per_rule"] += 2 + 16 * len(node.rules)
+                    #result["bytes_per_rule"] += 2 + 16 * len(node.rules)
+                    result["bytes_per_rule"] += 2 + self.size_of_rule(node.rules)
                     result["num_leaf_node"] += 1
                 else:
-                    result["bytes_per_rule"] += 2 + 16 + 4 * len(node.children)
+                    #result["bytes_per_rule"] += 2 + 16 + 4 * len(node.children)
+                    result["bytes_per_rule"] += 2 + self.size_of_rule(node.rules) + 4 * len(node.children)
                     result["num_nonleaf_node"] += 1
+                    
 
             nodes = next_layer_nodes
 
