@@ -826,15 +826,57 @@ class Tree:
             nodes = nodes_copy
         return nodes
 
-    def size_of_rule(self, rules):
+    def size_of_rule(self, rules, result):
         # http://teachweb.milin.cc/datacommunicatie/tcp_ip-osi_model.htm
         # rule_len = len(ip src) + len(ip_dst) + 
         # 2 bytes port src + 2 bytes dts port + 1 byte proto
         # rule_len = 5 bytes + len(ip_src) + len(ip_dst)
         sum_size = 0
         for rule in rules:
-            sum_size += 5 + (len_st(rule.ranges[0])/8) + (len_st(rule.ranges[2])/8)
-            sum_size += 5 + (len_st(rule.ranges[1])/8) + (len_st(rule.ranges[3])/8)
+            ip_src_oct_0 = len_st(rule.ranges[0])/8
+            ip_src_oct_1 = (len_st(rule.ranges[2])/8)
+            sum_size += 5 + ip_src_oct_0 + ip_src_oct_1
+            ip_dst_oct_0 = (len_st(rule.ranges[1])/8) 
+            ip_dst_oct_1 = (len_st(rule.ranges[3])/8)
+            sum_size += 5 + ip_dst_oct_0 + ip_dst_oct_1
+            if ip_dst_oct_0 > 3:
+                result['oct_4'] += 1
+            elif ip_dst_oct_0 > 2:
+                result['oct_3'] += 1
+            elif ip_dst_oct_0 > 1:
+                result['oct_2'] += 1
+            else:
+                result['oct_1'] += 1
+
+
+            if ip_dst_oct_1 > 3:
+                result['oct_4'] += 1
+            elif ip_dst_oct_1 > 2:
+                result['oct_3'] += 1
+            elif ip_dst_oct_1 > 1:
+                result['oct_2'] += 1
+            else:
+                result['oct_1'] += 1
+
+            if ip_src_oct_0 > 3:
+                result['oct_4'] += 1
+            elif ip_src_oct_0 > 2:
+                result['oct_3'] += 1
+            elif ip_src_oct_0 > 1:
+                result['oct_2'] += 1
+            else:
+                result['oct_1'] += 1
+
+
+            if ip_src_oct_1 > 3:
+                result['oct_4'] += 1
+            elif ip_src_oct_1 > 2:
+                result['oct_3'] += 1
+            elif ip_src_oct_1 > 1:
+                result['oct_2'] += 1
+            else:
+                result['oct_1'] += 1
+        #print('size rule: ', sum_size)
         return sum_size
 
     def compute_result(self):
@@ -850,7 +892,8 @@ class Tree:
         #     each child pointer: 4 bytes
         #     each rule: 16 bytes
         result = {"bytes_per_rule": 0, "memory_access": 0, \
-            "num_leaf_node": 0, "num_nonleaf_node": 0, "num_node": 0}
+            "num_leaf_node": 0, "num_nonleaf_node": 0, "num_node": 0, \
+            "oct_1": 0, "oct_2": 0, "oct_3": 0, "oct_4": 0, }
         nodes = [self.root]
         while len(nodes) != 0:
             next_layer_nodes = []
@@ -860,11 +903,11 @@ class Tree:
                 # compute bytes per rule
                 if self.is_leaf(node):
                     #result["bytes_per_rule"] += 2 + 16 * len(node.rules)
-                    result["bytes_per_rule"] += 2 + self.size_of_rule(node.rules)
+                    result["bytes_per_rule"] += 2 + self.size_of_rule(node.rules, result)
                     result["num_leaf_node"] += 1
                 else:
                     #result["bytes_per_rule"] += 2 + 16 + 4 * len(node.children)
-                    result["bytes_per_rule"] += 2 + self.size_of_rule(node.rules) + 4 * len(node.children)
+                    result["bytes_per_rule"] += 2 + self.size_of_rule(node.rules, result) + 4 * len(node.children)
                     result["num_nonleaf_node"] += 1
                     
 

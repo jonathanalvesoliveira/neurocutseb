@@ -229,6 +229,10 @@ class NeuroCutsEnv(MultiAgentEnv):
     def save_if_best(self, result):
         time_stat = int(result["memory_access"])
         space_stat = int(result["bytes_per_rule"])
+        oct_1 = int(result["oct_1"])
+        oct_2 = int(result["oct_2"])
+        oct_3 = int(result["oct_3"])
+        oct_4 = int(result["oct_4"])
         save = False
         if time_stat < self.best_time:
             self.best_time = time_stat
@@ -242,6 +246,9 @@ class NeuroCutsEnv(MultiAgentEnv):
                     os.path.basename(self.rules_file), time_stat, space_stat,
                     time.time()))
             print("Saving tree to {}".format(out))
+            print("oct_1: {} oct_2: {} oct_3: {} oct_4: {} ".format(
+                oct_1, oct_2, oct_3, oct_4
+            ))
             with open(out, "wb") as f:
                 pickle.dump(self.tree, f)
 
