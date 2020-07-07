@@ -233,6 +233,7 @@ class NeuroCutsEnv(MultiAgentEnv):
         oct_2 = int(result["oct_2"])
         oct_3 = int(result["oct_3"])
         oct_4 = int(result["oct_4"])
+        oct_5 = int(result["oct_5"])
         save = False
         if time_stat < self.best_time:
             self.best_time = time_stat
@@ -246,8 +247,8 @@ class NeuroCutsEnv(MultiAgentEnv):
                     os.path.basename(self.rules_file), time_stat, space_stat,
                     time.time()))
             print("Saving tree to {}".format(out))
-            print("oct_1: {} oct_2: {} oct_3: {} oct_4: {} ".format(
-                oct_1, oct_2, oct_3, oct_4
+            print("oct_1: {} oct_2: {} oct_3: {} oct_4: {} oct_5: {}".format(
+                oct_1, oct_2, oct_3, oct_4, oct_5
             ))
             with open(out, "wb") as f:
                 pickle.dump(self.tree, f)

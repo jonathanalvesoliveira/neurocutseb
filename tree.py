@@ -839,7 +839,9 @@ class Tree:
             ip_dst_oct_0 = (len_st(rule.ranges[1])/8) 
             ip_dst_oct_1 = (len_st(rule.ranges[3])/8)
             sum_size += 5 + ip_dst_oct_0 + ip_dst_oct_1
-            if ip_dst_oct_0 > 3:
+            if ip_dst_oct_0 > 4:
+                result['oct_5'] += 1
+            elif ip_dst_oct_0 > 3:
                 result['oct_4'] += 1
             elif ip_dst_oct_0 > 2:
                 result['oct_3'] += 1
@@ -849,7 +851,9 @@ class Tree:
                 result['oct_1'] += 1
 
 
-            if ip_dst_oct_1 > 3:
+            if ip_dst_oct_1 > 4:
+                result['oct_5'] += 1
+            elif ip_dst_oct_1 > 3:
                 result['oct_4'] += 1
             elif ip_dst_oct_1 > 2:
                 result['oct_3'] += 1
@@ -858,7 +862,9 @@ class Tree:
             else:
                 result['oct_1'] += 1
 
-            if ip_src_oct_0 > 3:
+            if ip_src_oct_0 > 4:
+                result['oct_5'] += 1
+            elif ip_src_oct_0 > 3:
                 result['oct_4'] += 1
             elif ip_src_oct_0 > 2:
                 result['oct_3'] += 1
@@ -868,7 +874,9 @@ class Tree:
                 result['oct_1'] += 1
 
 
-            if ip_src_oct_1 > 3:
+            if ip_src_oct_1 > 4:
+                result['oct_5'] += 1
+            elif ip_src_oct_1 > 3:
                 result['oct_4'] += 1
             elif ip_src_oct_1 > 2:
                 result['oct_3'] += 1
@@ -893,7 +901,7 @@ class Tree:
         #     each rule: 16 bytes
         result = {"bytes_per_rule": 0, "memory_access": 0, \
             "num_leaf_node": 0, "num_nonleaf_node": 0, "num_node": 0, \
-            "oct_1": 0, "oct_2": 0, "oct_3": 0, "oct_4": 0, }
+            "oct_1": 0, "oct_2": 0, "oct_3": 0, "oct_4": 0, 'oct_5': 0}
         nodes = [self.root]
         while len(nodes) != 0:
             next_layer_nodes = []
