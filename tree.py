@@ -162,6 +162,22 @@ def retornaOriginal(endereco):
 def len_st(endereco):
     st = divideBy2(endereco)    
     return len(st)
+
+#Retorna qtde bytes por octetos(eb)
+def retornaOcteto(endereco):
+    octeto = 0
+    if endereco <= 8:
+        octeto = 1  
+    elif endereco > 8  and endereco <= 16: 
+        octeto = 2
+    elif endereco > 16 and endereco <= 24: 
+        octeto = 3
+    elif endereco > 24 and endereco <= 32: 
+        octeto = 4
+    else:
+        octeto = 5
+            
+    return octeto
     
 def removeEB(sessao):
     #print("Aqui 5",  sessao)
@@ -198,6 +214,11 @@ def load_rules_from_file(file_name):
     valoreb = 0
     valoro = 0
     valoridx = 0
+    valoroct1 = 0
+    valoroct2 = 0
+    valoroct3 = 0
+    varlooct4 = 0
+    valoroct5 = 0
     for idx, line in enumerate(open(file_name)):
         elements = line[1:-1].split('\t')
         line = line.replace('\t', ' ')
@@ -233,7 +254,60 @@ def load_rules_from_file(file_name):
         dip_begin = retornaEB(dip_begin)
         dip_end = retornaEB(dip_begin)
         
-        valoreb += len_st(sip_begin) + len_st(sip_end)+len_st(dip_begin)+len_st(dip_end)
+        varloreb_begin_s = len_st(sip_begin) 
+        varloreb_end_s = len_st(sip_end)
+        varloreb_begin_r = len_st(dip_begin)
+        varloreb_end_r = len_st(dip_end)
+        qtde_octeto = retornaOcteto(varloreb_begin_s)
+        if qtde_octeto == 1:
+           valoroct1 += 1
+        elif qtde_octeto == 2:
+           valoroct2 += 1
+        elif qtde_octeto == 3:
+           valoroct3 += 1
+        elif qtde_octeto == 4:
+            valoroct4 += 1
+        else:
+           valoroct5 += 1
+        
+        qtde_octeto = retornaOcteto(varloreb_end_s)
+        if qtde_octeto == 1:
+           valoroct1 += 1
+        elif qtde_octeto == 2:
+           valoroct2 += 1
+        elif qtde_octeto == 3:
+           valoroct3 += 1
+        elif qtde_octeto == 4:
+            valoroct4 += 1
+        else:
+           valoroct5 += 1
+        
+        qtde_octeto = retornaOcteto(varloreb_begin_r)
+        if qtde_octeto == 1:
+           valoroct1 += 1
+        elif qtde_octeto == 2:
+           valoroct2 += 1
+        elif qtde_octeto == 3:
+           valoroct3 += 1
+        elif qtde_octeto == 4:
+            valoroct4 += 1
+        else:
+           valoroct5 += 1
+        
+        qtde_octeto = retornaOcteto(varloreb_end_r)
+        if qtde_octeto == 1:
+           valoroct1 += 1
+        elif qtde_octeto == 2:
+           valoroct2 += 1
+        elif qtde_octeto == 3:
+           valoroct3 += 1
+        elif qtde_octeto == 4:
+            valoroct4 += 1
+        else:
+           valoroct5 += 1
+           
+        valoreb += varloreb_begin_s + varloreb_end_s + varloreb_begin_r + varloreb_end_r 
+        
         valoridx = idx
         
         if proto_mask == 0xff:
@@ -250,9 +324,10 @@ def load_rules_from_file(file_name):
                 proto_end + 1
             ]))
     
-    print("Numero de Endereços:", valoridx*4, "valor EB: ", valoreb, "valor original: ", valoro,"Percentual", (valoro/valoreb-1)*100, "bit(s) por endereço:", (valoro-valoreb)/(valoridx*4)) 
+    print("Numero de Endereços:", valoridx*4, "valor EB: ", valoreb, "valor original: ", valoro,"Percentual", (valoro/valoreb-1)*100, "bit(s) por endereço:", (valoro-valoreb)/(valoridx*4), "1 - Octetos por endereço:", valoroct1, "2 - Octetos por endereço:", valoroct2, "3 - Octetos por endereço:", valoroct3, "4 - Octetos por endereço:", valoroct4, "5 - Octetos por endereço:", valoroct5) 
     
     return rules
+
 
 
 def to_bits(value, n):
