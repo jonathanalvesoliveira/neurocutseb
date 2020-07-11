@@ -217,7 +217,7 @@ def load_rules_from_file(file_name):
     valoroct1 = 0
     valoroct2 = 0
     valoroct3 = 0
-    varlooct4 = 0
+    valoroct4 = 0
     valoroct5 = 0
     for idx, line in enumerate(open(file_name)):
         elements = line[1:-1].split('\t')
@@ -266,7 +266,7 @@ def load_rules_from_file(file_name):
         elif qtde_octeto == 3:
            valoroct3 += 1
         elif qtde_octeto == 4:
-            valoroct4 += 1
+           valoroct4 += 1
         else:
            valoroct5 += 1
         
@@ -278,7 +278,7 @@ def load_rules_from_file(file_name):
         elif qtde_octeto == 3:
            valoroct3 += 1
         elif qtde_octeto == 4:
-            valoroct4 += 1
+           valoroct4 += 1
         else:
            valoroct5 += 1
         
@@ -290,7 +290,7 @@ def load_rules_from_file(file_name):
         elif qtde_octeto == 3:
            valoroct3 += 1
         elif qtde_octeto == 4:
-            valoroct4 += 1
+           valoroct4 += 1
         else:
            valoroct5 += 1
         
@@ -302,7 +302,7 @@ def load_rules_from_file(file_name):
         elif qtde_octeto == 3:
            valoroct3 += 1
         elif qtde_octeto == 4:
-            valoroct4 += 1
+           valoroct4 += 1
         else:
            valoroct5 += 1
            
@@ -324,7 +324,7 @@ def load_rules_from_file(file_name):
                 proto_end + 1
             ]))
     
-    print("Numero de Endereços:", valoridx*4, "valor EB: ", valoreb, "valor original: ", valoro,"Percentual", (valoro/valoreb-1)*100, "bit(s) por endereço:", (valoro-valoreb)/(valoridx*4), "1 - Octetos por endereço:", valoroct1, "2 - Octetos por endereço:", valoroct2, "3 - Octetos por endereço:", valoroct3, "4 - Octetos por endereço:", valoroct4, "5 - Octetos por endereço:", valoroct5) 
+    print("Numero de Endereços:", (valoridx+1)*4, "valor EB: ", valoreb, "valor original: ", valoro,"Percentual", (valoro/valoreb-1)*100, "bit(s) por endereço:", (valoro-valoreb)/((valoridx+1)*4), "1 - Octetos por endereço:", valoroct1, "2 - Octetos por endereço:", valoroct2, "3 - Octetos por endereço:", valoroct3, "4 - Octetos por endereço:", valoroct4, "5 - Octetos por endereço:", valoroct5) 
     
     return rules
 

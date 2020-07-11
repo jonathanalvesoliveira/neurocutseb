@@ -1,0 +1,72 @@
+2020-07-10 20:56:01.600603 Rules acl1_1k
+Numero de Endereços: 3768 valor EB:  110162 valor original:  117337 Percentual 6.513135200885967 bit(s) por endereço: 1.9041932059447984 1 - Octetos por endereço: 31 2 - Octetos por endereço: 87 3 - Octetos por endereço: 145 4 - Octetos por endereço: 3193 5 - Octetos por endereço: 312
+2020-07-10 20:56:01.930856 Rules acl1_10k
+Numero de Endereços: 39096 valor EB:  1154671 valor original:  1208708 Percentual 4.679861189897383 bit(s) por endereço: 1.3821618579905872 1 - Octetos por endereço: 198 2 - Octetos por endereço: 960 3 - Octetos por endereço: 3317 4 - Octetos por endereço: 24604 5 - Octetos por endereço: 10017
+2020-07-10 20:56:05.944599 Rules acl1_100k
+Numero de Endereços: 397276 valor EB:  11776029 valor original:  12341996 Percentual 4.806093802927958 bit(s) por endereço: 1.4246191564554618 1 - Octetos por endereço: 1786 2 - Octetos por endereço: 8149 3 - Octetos por endereço: 21570 4 - Octetos por endereço: 285005 5 - Octetos por endereço: 80766
+2020-07-10 20:56:56.083341 Rules acl2_1k
+Numero de Endereços: 3844 valor EB:  92379 valor original:  111997 Percentual 21.23642819255458 bit(s) por endereço: 5.103537981269511 1 - Octetos por endereço: 310 2 - Octetos por endereço: 380 3 - Octetos por endereço: 852 4 - Octetos por endereço: 1518 5 - Octetos por endereço: 784
+2020-07-10 20:56:56.463355 Rules acl2_10k
+Numero de Endereços: 37904 valor EB:  925947 valor original:  1120045 Percentual 20.96210690244691 bit(s) por endereço: 5.120778809624314 1 - Octetos por endereço: 2570 2 - Octetos por endereço: 5106 3 - Octetos por endereço: 6676 4 - Octetos por endereço: 16228 5 - Octetos por endereço: 7324
+2020-07-10 20:57:00.514955 Rules acl2_100k
+Numero de Endereços: 300400 valor EB:  7518932 valor original:  9052628 Percentual 20.39779053727311 bit(s) por endereço: 5.105512649800266 1 - Octetos por endereço: 13723 2 - Octetos por endereço: 38881 3 - Octetos por endereço: 55742 4 - Octetos por endereço: 137263 5 - Octetos por endereço: 54791
+2020-07-10 20:57:35.863699 Rules acl3_1k
+Numero de Endereços: 3960 valor EB:  107634 valor original:  116483 Percentual 8.221379861382093 bit(s) por endereço: 2.2345959595959597 1 - Octetos por endereço: 336 2 - Octetos por endereço: 157 3 - Octetos por endereço: 371 4 - Octetos por endereço: 1876 5 - Octetos por endereço: 1220
+2020-07-10 20:57:36.313196 Rules acl3_10k
+Numero de Endereços: 37676 valor EB:  1017018 valor original:  1114259 Percentual 9.561384360945425 bit(s) por endereço: 2.5809799341756023 1 - Octetos por endereço: 2867 2 - Octetos por endereço: 1628 3 - Octetos por endereço: 4251 4 - Octetos por endereço: 18915 5 - Octetos por endereço: 10015
+2020-07-10 20:57:40.658259 Rules acl3_100k
+Numero de Endereços: 397924 valor EB:  10742042 valor original:  11725325 Percentual 9.153594819309019 bit(s) por endereço: 2.4710321568942812 1 - Octetos por endereço: 31251 2 - Octetos por endereço: 15950 3 - Octetos por endereço: 37862 4 - Octetos por endereço: 218471 5 - Octetos por endereço: 94390
+2020-07-10 20:58:23.989830 Rules acl4_1k
+Numero de Endereços: 3960 valor EB:  102460 valor original:  113940 Percentual 11.20437243802459 bit(s) por endereço: 2.898989898989899 1 - Octetos por endereço: 308 2 - Octetos por endereço: 244 3 - Octetos por endereço: 312 4 - Octetos por endereço: 2875 5 - Octetos por endereço: 221
+2020-07-10 20:58:24.366780 Rules acl4_10k
+Numero de Endereços: 38364 valor EB:  1029452 valor original:  1136335 Percentual 10.382514192016723 bit(s) por endereço: 2.7860233552288602 1 - Octetos por endereço: 2438 2 - Octetos por endereço: 2322 3 - Octetos por endereço: 4317 4 - Octetos por endereço: 20289 5 - Octetos por endereço: 8998
+2020-07-10 20:58:28.635107 Rules acl4_100k
+Numero de Endereços: 396208 valor EB:  10776680 valor original:  11810560 Percentual 9.593678201449807 bit(s) por endereço: 2.6094374671889513 1 - Octetos por endereço: 25367 2 - Octetos por endereço: 21115 3 - Octetos por endereço: 37051 4 - Octetos por endereço: 221226 5 - Octetos por endereço: 91449
+2020-07-10 20:59:10.541653 Rules acl5_1k
+Numero de Endereços: 3732 valor EB:  103770 valor original:  106900 Percentual 3.0162860171533135 bit(s) por endereço: 0.8386923901393355 1 - Octetos por endereço: 0 2 - Octetos por endereço: 63 3 - Octetos por endereço: 420 4 - Octetos por endereço: 2878 5 - Octetos por endereço: 371
+2020-07-10 20:59:10.975167 Rules acl5_10k
+Numero de Endereços: 29192 valor EB:  878034 valor original:  909920 Percentual 3.6315222417355075 bit(s) por endereço: 1.0922855576870376 1 - Octetos por endereço: 0 2 - Octetos por endereço: 636 3 - Octetos por endereço: 2238 4 - Octetos por endereço: 18133 5 - Octetos por endereço: 8185
+2020-07-10 20:59:13.729632 Rules acl5_100k
+Numero de Endereços: 392720 valor EB:  11862394 valor original:  12175364 Percentual 2.6383375902031325 bit(s) por endereço: 0.7969291097983296 1 - Octetos por endereço: 9 2 - Octetos por endereço: 7111 3 - Octetos por endereço: 21520 4 - Octetos por endereço: 267369 5 - Octetos por endereço: 96711
+2020-07-10 20:59:56.659736 Rules fw1_1k
+Numero de Endereços: 3428 valor EB:  75279 valor original:  86877 Percentual 15.406687123899099 bit(s) por endereço: 3.383313885647608 1 - Octetos por endereço: 899 2 - Octetos por endereço: 212 3 - Octetos por endereço: 104 4 - Octetos por endereço: 1284 5 - Octetos por endereço: 929
+2020-07-10 20:59:57.043331 Rules fw1_10k
+Numero de Endereços: 37516 valor EB:  843120 valor original:  952787 Percentual 13.007282474618087 bit(s) por endereço: 2.923206098731208 1 - Octetos por endereço: 9248 2 - Octetos por endereço: 2281 3 - Octetos por endereço: 840 4 - Octetos por endereço: 15343 5 - Octetos por endereço: 9804
+2020-07-10 21:00:00.541719 Rules fw1_100k
+Numero de Endereços: 352324 valor EB:  8101409 valor original:  9019880 Percentual 11.33717603937785 bit(s) por endereço: 2.606893087044879 1 - Octetos por endereço: 81238 2 - Octetos por endereço: 21080 3 - Octetos por endereço: 7680 4 - Octetos por endereço: 147180 5 - Octetos por endereço: 95146
+2020-07-10 21:00:33.387194 Rules fw2_1k
+Numero de Endereços: 3884 valor EB:  71376 valor original:  98539 Percentual 38.0562093700964 bit(s) por endereço: 6.99356333676622 1 - Octetos por endereço: 1271 2 - Octetos por endereço: 289 3 - Octetos por endereço: 449 4 - Octetos por endereço: 1249 5 - Octetos por endereço: 626
+2020-07-10 21:00:33.729219 Rules fw2_10k
+Numero de Endereços: 38620 valor EB:  735252 valor original:  1008630 Percentual 37.181537758482804 bit(s) por endereço: 7.0786639047125846 1 - Octetos por endereço: 12302 2 - Octetos por endereço: 2697 3 - Octetos por endereço: 4325 4 - Octetos por endereço: 12980 5 - Octetos por endereço: 6316
+2020-07-10 21:00:36.928345 Rules fw2_100k
+Numero de Endereços: 384312 valor EB:  7287230 valor original:  10017125 Percentual 37.46135362819618 bit(s) por endereço: 7.103330106788235 1 - Octetos por endereço: 123818 2 - Octetos por endereço: 25943 3 - Octetos por endereço: 44022 4 - Octetos por endereço: 127342 5 - Octetos por endereço: 63187
+2020-07-10 21:01:10.479985 Rules fw3_1k
+Numero de Endereços: 3196 valor EB:  66921 valor original:  77907 Percentual 16.416371542565123 bit(s) por endereço: 3.4374217772215268 1 - Octetos por endereço: 972 2 - Octetos por endereço: 205 3 - Octetos por endereço: 52 4 - Octetos por endereço: 987 5 - Octetos por endereço: 980
+2020-07-10 21:01:10.740762 Rules fw3_10k
+Numero de Endereços: 36148 valor EB:  786534 valor original:  898529 Percentual 14.239053874339834 bit(s) por endereço: 3.0982350337501385 1 - Octetos por endereço: 9363 2 - Octetos por endereço: 2480 3 - Octetos por endereço: 962 4 - Octetos por endereço: 14193 5 - Octetos por endereço: 9150
+2020-07-10 21:01:14.137587 Rules fw3_100k
+Numero de Endereços: 335008 valor EB:  7595968 valor original:  8493956 Percentual 11.821903409808998 bit(s) por endereço: 2.680497182156844 1 - Octetos por endereço: 82568 2 - Octetos por endereço: 20242 3 - Octetos por endereço: 6701 4 - Octetos por endereço: 130226 5 - Octetos por endereço: 95271
+2020-07-10 21:01:45.298491 Rules fw4_1k
+Numero de Endereços: 3388 valor EB:  74861 valor original:  88130 Percentual 17.72485005543607 bit(s) por endereço: 3.916469893742621 1 - Octetos por endereço: 783 2 - Octetos por endereço: 201 3 - Octetos por endereço: 475 4 - Octetos por endereço: 1054 5 - Octetos por endereço: 875
+2020-07-10 21:01:45.569437 Rules fw4_10k
+Numero de Endereços: 35100 valor EB:  787793 valor original:  917572 Percentual 16.473743737250768 bit(s) por endereço: 3.6974074074074075 1 - Octetos por endereço: 7535 2 - Octetos por endereço: 1908 3 - Octetos por endereço: 4056 4 - Octetos por endereço: 13777 5 - Octetos por endereço: 7824
+2020-07-10 21:01:48.875514 Rules fw4_100k
+Numero de Endereços: 335868 valor EB:  7697019 valor original:  8861503 Percentual 15.129025925491412 bit(s) por endereço: 3.4670882608643874 1 - Octetos por endereço: 64367 2 - Octetos por endereço: 15859 3 - Octetos por endereço: 41107 4 - Octetos por endereço: 140239 5 - Octetos por endereço: 74296
+2020-07-10 21:02:20.589666 Rules fw5_1k
+Numero de Endereços: 3456 valor EB:  70431 valor original:  84965 Percentual 20.635799576890857 bit(s) por endereço: 4.205439814814815 1 - Octetos por endereço: 1059 2 - Octetos por endereço: 255 3 - Octetos por endereço: 82 4 - Octetos por endereço: 1200 5 - Octetos por endereço: 860
+2020-07-10 21:02:20.990861 Rules fw5_10k
+Numero de Endereços: 35332 valor EB:  748257 valor original:  884688 Percentual 18.233173896134613 bit(s) por endereço: 3.861400430204913 1 - Octetos por endereço: 9848 2 - Octetos por endereço: 2641 3 - Octetos por endereço: 878 4 - Octetos por endereço: 13230 5 - Octetos por endereço: 8735
+2020-07-10 21:02:24.141371 Rules fw5_100k
+Numero de Endereços: 335188 valor EB:  7247511 valor original:  8440090 Percentual 16.455014694010117 bit(s) por endereço: 3.557940618399227 1 - Octetos por endereço: 89515 2 - Octetos por endereço: 23597 3 - Octetos por endereço: 8575 4 - Octetos por endereço: 129036 5 - Octetos por endereço: 84465
+2020-07-10 21:02:54.383740 Rules ipc1_1k
+Numero de Endereços: 3896 valor EB:  102133 valor original:  116773 Percentual 14.334250438154172 bit(s) por endereço: 3.757700205338809 1 - Octetos por endereço: 222 2 - Octetos por endereço: 220 3 - Octetos por endereço: 836 4 - Octetos por endereço: 1720 5 - Octetos por endereço: 898
+2020-07-10 21:02:54.813319 Rules ipc1_10k
+Numero de Endereços: 38072 valor EB:  992554 valor original:  1128445 Percentual 13.691043509975277 bit(s) por endereço: 3.5693160327799958 1 - Octetos por endereço: 2439 2 - Octetos por endereço: 2150 3 - Octetos por endereço: 6614 4 - Octetos por endereço: 18693 5 - Octetos por endereço: 8176
+2020-07-10 21:02:58.587794 Rules ipc1_100k
+Numero de Endereços: 397300 valor EB:  10401774 valor original:  11792772 Percentual 13.372699695263513 bit(s) por endereço: 3.5011276113767935 1 - Octetos por endereço: 24686 2 - Octetos por endereço: 20235 3 - Octetos por endereço: 70782 4 - Octetos por endereço: 199317 5 - Octetos por endereço: 82280
+2020-07-10 21:03:39.500740 Rules ipc2_1k
+Numero de Endereços: 2784 valor EB:  72326 valor original:  78821 Percentual 8.980173105107436 bit(s) por endereço: 2.3329741379310347 1 - Octetos por endereço: 400 2 - Octetos por endereço: 80 3 - Octetos por endereço: 75 4 - Octetos por endereço: 1457 5 - Octetos por endereço: 772
+2020-07-10 21:03:39.754789 Rules ipc2_10k
+Numero de Endereços: 40000 valor EB:  1044050 valor original:  1096735 Percentual 5.0462142617690775 bit(s) por endereço: 1.317125 1 - Octetos por endereço: 6292 2 - Octetos por endereço: 1141 3 - Octetos por endereço: 719 4 - Octetos por endereço: 17393 5 - Octetos por endereço: 14455
+2020-07-10 21:03:43.618657 Rules ipc2_100k
+Numero de Endereços: 400000 valor EB:  10518669 valor original:  11012623 Percentual 4.695974367099098 bit(s) por endereço: 1.234885 1 - Octetos por endereço: 64309 2 - Octetos por endereço: 9976 3 - Octetos por endereço: 5730 4 - Octetos por endereço: 174466 5 - Octetos por endereço: 145519
