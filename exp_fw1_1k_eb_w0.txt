@@ -21288,3 +21288,819 @@ Result for PPO_tree_env_f42d4d30:
   training_iteration: 185
   trial_id: f42d4d30
   
+[2m[36m(pid=5334)[0m 2020-07-11 21:35:07,625	WARNING ppo.py:144 -- The magnitude of your environment rewards are more than 194721.0x the scale of `vf_clip_param`. This means that it will take more than 194721.0 iterations for your value function to converge. If this is not intended, consider increasing `vf_clip_param`.
+== Status ==
+Memory usage on this node: 10.4/31.2 GiB
+Using FIFO scheduling algorithm.
+Resources requested: 8/8 CPUs, 0.6/1 GPUs, 0.0/16.31 GiB heap, 0.0/5.62 GiB objects
+Number of trials: 1 ({'RUNNING': 1})
+Result logdir: /home/jaaoliveira/ray_results/neurocuts_None
++-----------------------+----------+-------------------+------------------------------+----------------------------------------------------------------------+--------+------------------+-------------+--------------+
+| Trial name            | status   | loc               |   env_config/tree_gae_lambda | env_config/rules                                                     |   iter |   total time (s) |   timesteps |       reward |
+|-----------------------+----------+-------------------+------------------------------+----------------------------------------------------------------------+--------+------------------+-------------+--------------|
+| PPO_tree_env_f42d4d30 | RUNNING  | 192.168.0.29:5334 |                         0.95 | /home/jaaoliveira/src/neurocutseb/neurocuts-master/classbench/fw1_1k |    185 |          37337.8 |     9296618 | -1.94721e+06 |
++-----------------------+----------+-------------------+------------------------------+----------------------------------------------------------------------+--------+------------------+-------------+--------------+
+
+Result for PPO_tree_env_f42d4d30:
+  custom_metrics:
+    bytes_per_rule_max: 529697.5965577597
+    bytes_per_rule_mean: 34342.35712660444
+    bytes_per_rule_min: 429.80542590431736
+    bytes_per_rule_valid_max: 1561.5468203033838
+    bytes_per_rule_valid_mean: .nan
+    bytes_per_rule_valid_min: 429.80542590431736
+    exceeded_max_depth_max: 7410
+    exceeded_max_depth_mean: 659.21
+    exceeded_max_depth_min: 0
+    memory_access_max: 501
+    memory_access_mean: 180.45
+    memory_access_min: 38
+    memory_access_valid_max: 501
+    memory_access_valid_mean: .nan
+    memory_access_valid_min: 38
+    nodes_remaining_max: 9862
+    nodes_remaining_mean: 865.25
+    nodes_remaining_min: 0
+    num_nodes_max: 45585
+    num_nodes_mean: 10814.1
+    num_nodes_min: 553
+    num_nodes_valid_max: 3307
+    num_nodes_valid_mean: .nan
+    num_nodes_valid_min: 553
+    num_splits_max: 15001
+    num_splits_mean: 4367.12
+    num_splits_min: 180
+    num_splits_valid_max: 1430
+    num_splits_valid_mean: .nan
+    num_splits_valid_min: 180
+    partition_fraction_max: 0.0
+    partition_fraction_mean: 0.0
+    partition_fraction_min: 0.0
+    rules_remaining_max: 838
+    rules_remaining_mean: 211.04
+    rules_remaining_min: 0
+    tree_depth_max: 501
+    tree_depth_mean: 180.45
+    tree_depth_min: 38
+    tree_depth_valid_max: 501
+    tree_depth_valid_mean: .nan
+    tree_depth_valid_min: 38
+  date: 2020-07-11_22-24-06
+  done: false
+  episode_len_mean: 4367.12
+  episode_reward_max: -8642.0
+  episode_reward_mean: -3233578.93
+  episode_reward_min: -18771338.0
+  episodes_this_iter: 7
+  episodes_total: 25990
+  experiment_id: 8a05d07432a8467d9d7d880144974f74
+  experiment_tag: 0_rules=_home_jaaoliveira_src_neurocutseb_neurocuts-master_classbench_fw1_1k,tree_gae_lambda=0.95
+  hostname: kubuntu
+  info:
+    grad_time_ms: 11424.197
+    learner:
+      default_policy:
+        cur_kl_coeff: 0.1443253755569458
+        cur_lr: 4.999999873689376e-05
+        entropy: 0.08319806307554245
+        entropy_coeff: 0.009999999776482582
+        kl: 0.0025778929702937603
+        policy_loss: -0.0020640594884753227
+        total_loss: 43318636.0
+        vf_explained_var: 0.003996254876255989
+        vf_loss: 43318636.0
+    load_time_ms: 103.278
+    num_steps_sampled: 9401625
+    num_steps_trained: 9302000
+    sample_time_ms: 453546.369
+    update_time_ms: 6.255
+  iterations_since_restore: 186
+  node_ip: 192.168.0.29
+  num_healthy_workers: 7
+  off_policy_estimator: {}
+  perf:
+    cpu_util_percent: 78.49637462235648
+    gpu_util_percent0: 0.08695871097683786
+    ram_util_percent: 31.362739174219534
+    vram_util_percent0: 0.5311182609952839
+  pid: 5334
+  policy_reward_max: {}
+  policy_reward_mean: {}
+  policy_reward_min: {}
+  sampler_perf:
+    mean_env_wait_ms: 22.21856382287396
+    mean_inference_ms: 1.4286113008324066
+    mean_processing_ms: 1.122117904955487
+  time_since_restore: 40276.692279577255
+  time_this_iter_s: 2938.8808178901672
+  time_total_s: 40276.692279577255
+  timestamp: 1594520646
+  timesteps_since_restore: 9401625
+  timesteps_this_iter: 105007
+  timesteps_total: 9401625
+  training_iteration: 186
+  trial_id: f42d4d30
+  
+[2m[36m(pid=5334)[0m 2020-07-11 22:24:06,522	WARNING ppo.py:144 -- The magnitude of your environment rewards are more than 323358.0x the scale of `vf_clip_param`. This means that it will take more than 323358.0 iterations for your value function to converge. If this is not intended, consider increasing `vf_clip_param`.
+== Status ==
+Memory usage on this node: 9.8/31.2 GiB
+Using FIFO scheduling algorithm.
+Resources requested: 8/8 CPUs, 0.6/1 GPUs, 0.0/16.31 GiB heap, 0.0/5.62 GiB objects
+Number of trials: 1 ({'RUNNING': 1})
+Result logdir: /home/jaaoliveira/ray_results/neurocuts_None
++-----------------------+----------+-------------------+------------------------------+----------------------------------------------------------------------+--------+------------------+-------------+--------------+
+| Trial name            | status   | loc               |   env_config/tree_gae_lambda | env_config/rules                                                     |   iter |   total time (s) |   timesteps |       reward |
+|-----------------------+----------+-------------------+------------------------------+----------------------------------------------------------------------+--------+------------------+-------------+--------------|
+| PPO_tree_env_f42d4d30 | RUNNING  | 192.168.0.29:5334 |                         0.95 | /home/jaaoliveira/src/neurocutseb/neurocuts-master/classbench/fw1_1k |    186 |          40276.7 |     9401625 | -3.23358e+06 |
++-----------------------+----------+-------------------+------------------------------+----------------------------------------------------------------------+--------+------------------+-------------+--------------+
+
+Result for PPO_tree_env_f42d4d30:
+  custom_metrics:
+    bytes_per_rule_max: 530647.5221703617
+    bytes_per_rule_mean: 71456.61714410735
+    bytes_per_rule_min: 429.80542590431736
+    bytes_per_rule_valid_max: 1561.5468203033838
+    bytes_per_rule_valid_mean: .nan
+    bytes_per_rule_valid_min: 429.80542590431736
+    exceeded_max_depth_max: 7410
+    exceeded_max_depth_mean: 1168.81
+    exceeded_max_depth_min: 0
+    memory_access_max: 501
+    memory_access_mean: 212.85
+    memory_access_min: 38
+    memory_access_valid_max: 501
+    memory_access_valid_mean: .nan
+    memory_access_valid_min: 38
+    nodes_remaining_max: 9862
+    nodes_remaining_mean: 1546.07
+    nodes_remaining_min: 0
+    num_nodes_max: 45585
+    num_nodes_mean: 13925.32
+    num_nodes_min: 553
+    num_nodes_valid_max: 3307
+    num_nodes_valid_mean: .nan
+    num_nodes_valid_min: 553
+    num_splits_max: 15001
+    num_splits_mean: 5403.91
+    num_splits_min: 180
+    num_splits_valid_max: 1430
+    num_splits_valid_mean: .nan
+    num_splits_valid_min: 180
+    partition_fraction_max: 0.0
+    partition_fraction_mean: 0.0
+    partition_fraction_min: 0.0
+    rules_remaining_max: 838
+    rules_remaining_mean: 269.7
+    rules_remaining_min: 0
+    tree_depth_max: 501
+    tree_depth_mean: 212.85
+    tree_depth_min: 38
+    tree_depth_valid_max: 501
+    tree_depth_valid_mean: .nan
+    tree_depth_valid_min: 38
+  date: 2020-07-11_23-19-29
+  done: false
+  episode_len_mean: 5403.91
+  episode_reward_max: -8642.0
+  episode_reward_mean: -4526597.41
+  episode_reward_min: -18771338.0
+  episodes_this_iter: 7
+  episodes_total: 25997
+  experiment_id: 8a05d07432a8467d9d7d880144974f74
+  experiment_tag: 0_rules=_home_jaaoliveira_src_neurocutseb_neurocuts-master_classbench_fw1_1k,tree_gae_lambda=0.95
+  hostname: kubuntu
+  info:
+    grad_time_ms: 12660.411
+    learner:
+      default_policy:
+        cur_kl_coeff: 0.0721626877784729
+        cur_lr: 4.999999873689376e-05
+        entropy: 5.090821275643975e-08
+        entropy_coeff: 0.009999999776482582
+        kl: -5.19188247949387e-10
+        policy_loss: 1.2237117516633589e-05
+        total_loss: 44550380.0
+        vf_explained_var: 0.0049673994071781635
+        vf_loss: 44550380.0
+    load_time_ms: 113.082
+    num_steps_sampled: 9506632
+    num_steps_trained: 9407000
+    sample_time_ms: 766251.54
+    update_time_ms: 6.284
+  iterations_since_restore: 187
+  node_ip: 192.168.0.29
+  num_healthy_workers: 7
+  off_policy_estimator: {}
+  perf:
+    cpu_util_percent: 88.74414272890485
+    gpu_util_percent0: 0.07680879712746859
+    ram_util_percent: 31.582450628366246
+    vram_util_percent0: 0.49584790559397046
+  pid: 5334
+  policy_reward_max: {}
+  policy_reward_mean: {}
+  policy_reward_min: {}
+  sampler_perf:
+    mean_env_wait_ms: 22.431403336858647
+    mean_inference_ms: 1.4298232675348839
+    mean_processing_ms: 1.127355555182863
+  time_since_restore: 43599.604326725006
+  time_this_iter_s: 3322.912047147751
+  time_total_s: 43599.604326725006
+  timestamp: 1594523969
+  timesteps_since_restore: 9506632
+  timesteps_this_iter: 105007
+  timesteps_total: 9506632
+  training_iteration: 187
+  trial_id: f42d4d30
+  
+[2m[36m(pid=5334)[0m 2020-07-11 23:19:29,460	WARNING ppo.py:144 -- The magnitude of your environment rewards are more than 452660.0x the scale of `vf_clip_param`. This means that it will take more than 452660.0 iterations for your value function to converge. If this is not intended, consider increasing `vf_clip_param`.
+== Status ==
+Memory usage on this node: 10.1/31.2 GiB
+Using FIFO scheduling algorithm.
+Resources requested: 8/8 CPUs, 0.6/1 GPUs, 0.0/16.31 GiB heap, 0.0/5.62 GiB objects
+Number of trials: 1 ({'RUNNING': 1})
+Result logdir: /home/jaaoliveira/ray_results/neurocuts_None
++-----------------------+----------+-------------------+------------------------------+----------------------------------------------------------------------+--------+------------------+-------------+-------------+
+| Trial name            | status   | loc               |   env_config/tree_gae_lambda | env_config/rules                                                     |   iter |   total time (s) |   timesteps |      reward |
+|-----------------------+----------+-------------------+------------------------------+----------------------------------------------------------------------+--------+------------------+-------------+-------------|
+| PPO_tree_env_f42d4d30 | RUNNING  | 192.168.0.29:5334 |                         0.95 | /home/jaaoliveira/src/neurocutseb/neurocuts-master/classbench/fw1_1k |    187 |          43599.6 |     9506632 | -4.5266e+06 |
++-----------------------+----------+-------------------+------------------------------+----------------------------------------------------------------------+--------+------------------+-------------+-------------+
+
+Result for PPO_tree_env_f42d4d30:
+  custom_metrics:
+    bytes_per_rule_max: 530647.5221703617
+    bytes_per_rule_mean: 108570.91240081677
+    bytes_per_rule_min: 429.80542590431736
+    bytes_per_rule_valid_max: 1561.5468203033838
+    bytes_per_rule_valid_mean: .nan
+    bytes_per_rule_valid_min: 429.80542590431736
+    exceeded_max_depth_max: 7410
+    exceeded_max_depth_mean: 1678.41
+    exceeded_max_depth_min: 0
+    memory_access_max: 501
+    memory_access_mean: 245.23
+    memory_access_min: 38
+    memory_access_valid_max: 501
+    memory_access_valid_mean: .nan
+    memory_access_valid_min: 38
+    nodes_remaining_max: 9862
+    nodes_remaining_mean: 2226.89
+    nodes_remaining_min: 0
+    num_nodes_max: 45585
+    num_nodes_mean: 17036.52
+    num_nodes_min: 553
+    num_nodes_valid_max: 3307
+    num_nodes_valid_mean: .nan
+    num_nodes_valid_min: 553
+    num_splits_max: 15001
+    num_splits_mean: 6440.77
+    num_splits_min: 180
+    num_splits_valid_max: 1430
+    num_splits_valid_mean: .nan
+    num_splits_valid_min: 180
+    partition_fraction_max: 0.0
+    partition_fraction_mean: 0.0
+    partition_fraction_min: 0.0
+    rules_remaining_max: 838
+    rules_remaining_mean: 328.36
+    rules_remaining_min: 0
+    tree_depth_max: 501
+    tree_depth_mean: 245.23
+    tree_depth_min: 38
+    tree_depth_valid_max: 501
+    tree_depth_valid_mean: .nan
+    tree_depth_valid_min: 38
+  date: 2020-07-12_00-14-48
+  done: false
+  episode_len_mean: 6440.77
+  episode_reward_max: -8642.0
+  episode_reward_mean: -5819612.31
+  episode_reward_min: -18771338.0
+  episodes_this_iter: 7
+  episodes_total: 26004
+  experiment_id: 8a05d07432a8467d9d7d880144974f74
+  experiment_tag: 0_rules=_home_jaaoliveira_src_neurocutseb_neurocuts-master_classbench_fw1_1k,tree_gae_lambda=0.95
+  hostname: kubuntu
+  info:
+    grad_time_ms: 13912.084
+    learner:
+      default_policy:
+        cur_kl_coeff: 0.03608134388923645
+        cur_lr: 4.999999873689376e-05
+        entropy: 5.608274022961268e-08
+        entropy_coeff: 0.009999999776482582
+        kl: -2.60290122788831e-10
+        policy_loss: 1.1143421033921186e-05
+        total_loss: 44499864.0
+        vf_explained_var: 0.006529943086206913
+        vf_loss: 44499864.0
+    load_time_ms: 122.392
+    num_steps_sampled: 9611639
+    num_steps_trained: 9512000
+    sample_time_ms: 1079379.574
+    update_time_ms: 6.385
+  iterations_since_restore: 188
+  node_ip: 192.168.0.29
+  num_healthy_workers: 7
+  off_policy_estimator: {}
+  perf:
+    cpu_util_percent: 88.83638000900496
+    gpu_util_percent0: 0.07536019810895993
+    ram_util_percent: 32.28995947771274
+    vram_util_percent0: 0.496039603960396
+  pid: 5334
+  policy_reward_max: {}
+  policy_reward_mean: {}
+  policy_reward_min: {}
+  sampler_perf:
+    mean_env_wait_ms: 22.78840342577772
+    mean_inference_ms: 1.4311373199776685
+    mean_processing_ms: 1.1331491814280406
+  time_since_restore: 46918.19468164444
+  time_this_iter_s: 3318.5903549194336
+  time_total_s: 46918.19468164444
+  timestamp: 1594527288
+  timesteps_since_restore: 9611639
+  timesteps_this_iter: 105007
+  timesteps_total: 9611639
+  training_iteration: 188
+  trial_id: f42d4d30
+  
+[2m[36m(pid=5334)[0m 2020-07-12 00:14:48,075	WARNING ppo.py:144 -- The magnitude of your environment rewards are more than 581961.0x the scale of `vf_clip_param`. This means that it will take more than 581961.0 iterations for your value function to converge. If this is not intended, consider increasing `vf_clip_param`.
+== Status ==
+Memory usage on this node: 10.2/31.2 GiB
+Using FIFO scheduling algorithm.
+Resources requested: 8/8 CPUs, 0.6/1 GPUs, 0.0/16.31 GiB heap, 0.0/5.62 GiB objects
+Number of trials: 1 ({'RUNNING': 1})
+Result logdir: /home/jaaoliveira/ray_results/neurocuts_None
++-----------------------+----------+-------------------+------------------------------+----------------------------------------------------------------------+--------+------------------+-------------+--------------+
+| Trial name            | status   | loc               |   env_config/tree_gae_lambda | env_config/rules                                                     |   iter |   total time (s) |   timesteps |       reward |
+|-----------------------+----------+-------------------+------------------------------+----------------------------------------------------------------------+--------+------------------+-------------+--------------|
+| PPO_tree_env_f42d4d30 | RUNNING  | 192.168.0.29:5334 |                         0.95 | /home/jaaoliveira/src/neurocutseb/neurocuts-master/classbench/fw1_1k |    188 |          46918.2 |     9611639 | -5.81961e+06 |
++-----------------------+----------+-------------------+------------------------------+----------------------------------------------------------------------+--------+------------------+-------------+--------------+
+
+Result for PPO_tree_env_f42d4d30:
+  custom_metrics:
+    bytes_per_rule_max: 530647.5221703617
+    bytes_per_rule_mean: 145685.13534859975
+    bytes_per_rule_min: 429.80542590431736
+    bytes_per_rule_valid_max: 1561.5468203033838
+    bytes_per_rule_valid_mean: .nan
+    bytes_per_rule_valid_min: 429.80542590431736
+    exceeded_max_depth_max: 7410
+    exceeded_max_depth_mean: 2188.01
+    exceeded_max_depth_min: 0
+    memory_access_max: 501
+    memory_access_mean: 277.63
+    memory_access_min: 38
+    memory_access_valid_max: 501
+    memory_access_valid_mean: .nan
+    memory_access_valid_min: 38
+    nodes_remaining_max: 9862
+    nodes_remaining_mean: 2907.71
+    nodes_remaining_min: 0
+    num_nodes_max: 45585
+    num_nodes_mean: 20147.74
+    num_nodes_min: 555
+    num_nodes_valid_max: 3307
+    num_nodes_valid_mean: .nan
+    num_nodes_valid_min: 555
+    num_splits_max: 15001
+    num_splits_mean: 7477.53
+    num_splits_min: 180
+    num_splits_valid_max: 1430
+    num_splits_valid_mean: .nan
+    num_splits_valid_min: 180
+    partition_fraction_max: 0.0
+    partition_fraction_mean: 0.0
+    partition_fraction_min: 0.0
+    rules_remaining_max: 838
+    rules_remaining_mean: 387.02
+    rules_remaining_min: 0
+    tree_depth_max: 501
+    tree_depth_mean: 277.63
+    tree_depth_min: 38
+    tree_depth_valid_max: 501
+    tree_depth_valid_mean: .nan
+    tree_depth_valid_min: 38
+  date: 2020-07-12_01-09-48
+  done: false
+  episode_len_mean: 7477.53
+  episode_reward_max: -8642.0
+  episode_reward_mean: -7112628.37
+  episode_reward_min: -18771338.0
+  episodes_this_iter: 7
+  episodes_total: 26011
+  experiment_id: 8a05d07432a8467d9d7d880144974f74
+  experiment_tag: 0_rules=_home_jaaoliveira_src_neurocutseb_neurocuts-master_classbench_fw1_1k,tree_gae_lambda=0.95
+  hostname: kubuntu
+  info:
+    grad_time_ms: 15167.925
+    learner:
+      default_policy:
+        cur_kl_coeff: 0.018040671944618225
+        cur_lr: 4.999999873689376e-05
+        entropy: 1.640363365140729e-07
+        entropy_coeff: 0.009999999776482582
+        kl: -3.1780218456844977e-09
+        policy_loss: 1.2267926649656147e-05
+        total_loss: 44445716.0
+        vf_explained_var: 0.008091595955193043
+        vf_loss: 44445716.0
+    load_time_ms: 132.137
+    num_steps_sampled: 9716646
+    num_steps_trained: 9617000
+    sample_time_ms: 1391001.031
+    update_time_ms: 6.259
+  iterations_since_restore: 189
+  node_ip: 192.168.0.29
+  num_healthy_workers: 7
+  off_policy_estimator: {}
+  perf:
+    cpu_util_percent: 89.17201814058956
+    gpu_util_percent0: 0.06901814058956916
+    ram_util_percent: 32.68979591836734
+    vram_util_percent0: 0.496039603960396
+  pid: 5334
+  policy_reward_max: {}
+  policy_reward_mean: {}
+  policy_reward_min: {}
+  sampler_perf:
+    mean_env_wait_ms: 23.35878954555148
+    mean_inference_ms: 1.431783860554476
+    mean_processing_ms: 1.1366877386439007
+  time_since_restore: 50218.69917654991
+  time_this_iter_s: 3300.504494905472
+  time_total_s: 50218.69917654991
+  timestamp: 1594530588
+  timesteps_since_restore: 9716646
+  timesteps_this_iter: 105007
+  timesteps_total: 9716646
+  training_iteration: 189
+  trial_id: f42d4d30
+  
+[2m[36m(pid=5334)[0m 2020-07-12 01:09:48,633	WARNING ppo.py:144 -- The magnitude of your environment rewards are more than 711263.0x the scale of `vf_clip_param`. This means that it will take more than 711263.0 iterations for your value function to converge. If this is not intended, consider increasing `vf_clip_param`.
+== Status ==
+Memory usage on this node: 10.3/31.2 GiB
+Using FIFO scheduling algorithm.
+Resources requested: 8/8 CPUs, 0.6/1 GPUs, 0.0/16.31 GiB heap, 0.0/5.62 GiB objects
+Number of trials: 1 ({'RUNNING': 1})
+Result logdir: /home/jaaoliveira/ray_results/neurocuts_None
++-----------------------+----------+-------------------+------------------------------+----------------------------------------------------------------------+--------+------------------+-------------+--------------+
+| Trial name            | status   | loc               |   env_config/tree_gae_lambda | env_config/rules                                                     |   iter |   total time (s) |   timesteps |       reward |
+|-----------------------+----------+-------------------+------------------------------+----------------------------------------------------------------------+--------+------------------+-------------+--------------|
+| PPO_tree_env_f42d4d30 | RUNNING  | 192.168.0.29:5334 |                         0.95 | /home/jaaoliveira/src/neurocutseb/neurocuts-master/classbench/fw1_1k |    189 |          50218.7 |     9716646 | -7.11263e+06 |
++-----------------------+----------+-------------------+------------------------------+----------------------------------------------------------------------+--------+------------------+-------------+--------------+
+
+Result for PPO_tree_env_f42d4d30:
+  custom_metrics:
+    bytes_per_rule_max: 530647.5221703617
+    bytes_per_rule_mean: 182799.66393815633
+    bytes_per_rule_min: 431.72184947491246
+    bytes_per_rule_valid_max: 1561.5468203033838
+    bytes_per_rule_valid_mean: .nan
+    bytes_per_rule_valid_min: 431.72184947491246
+    exceeded_max_depth_max: 7410
+    exceeded_max_depth_mean: 2697.61
+    exceeded_max_depth_min: 0
+    memory_access_max: 501
+    memory_access_mean: 310.01
+    memory_access_min: 38
+    memory_access_valid_max: 501
+    memory_access_valid_mean: .nan
+    memory_access_valid_min: 38
+    nodes_remaining_max: 9862
+    nodes_remaining_mean: 3588.53
+    nodes_remaining_min: 0
+    num_nodes_max: 45585
+    num_nodes_mean: 23259.0
+    num_nodes_min: 555
+    num_nodes_valid_max: 3307
+    num_nodes_valid_mean: .nan
+    num_nodes_valid_min: 555
+    num_splits_max: 15001
+    num_splits_mean: 8514.4
+    num_splits_min: 182
+    num_splits_valid_max: 1430
+    num_splits_valid_mean: .nan
+    num_splits_valid_min: 182
+    partition_fraction_max: 0.0
+    partition_fraction_mean: 0.0
+    partition_fraction_min: 0.0
+    rules_remaining_max: 838
+    rules_remaining_mean: 445.68
+    rules_remaining_min: 0
+    tree_depth_max: 501
+    tree_depth_mean: 310.01
+    tree_depth_min: 38
+    tree_depth_valid_max: 501
+    tree_depth_valid_mean: .nan
+    tree_depth_valid_min: 38
+  date: 2020-07-12_02-04-57
+  done: false
+  episode_len_mean: 8514.4
+  episode_reward_max: -8688.0
+  episode_reward_mean: -8405647.05
+  episode_reward_min: -18771338.0
+  episodes_this_iter: 7
+  episodes_total: 26018
+  experiment_id: 8a05d07432a8467d9d7d880144974f74
+  experiment_tag: 0_rules=_home_jaaoliveira_src_neurocutseb_neurocuts-master_classbench_fw1_1k,tree_gae_lambda=0.95
+  hostname: kubuntu
+  info:
+    grad_time_ms: 16422.127
+    learner:
+      default_policy:
+        cur_kl_coeff: 0.009020335972309113
+        cur_lr: 4.999999873689376e-05
+        entropy: 2.89629265015634e-10
+        entropy_coeff: 0.009999999776482582
+        kl: 2.677577128906705e-07
+        policy_loss: 1.2086154129065108e-05
+        total_loss: 44392396.0
+        vf_explained_var: 0.009921596385538578
+        vf_loss: 44392396.0
+    load_time_ms: 142.763
+    num_steps_sampled: 9821653
+    num_steps_trained: 9722000
+    sample_time_ms: 1703324.03
+    update_time_ms: 6.284
+  iterations_since_restore: 190
+  node_ip: 192.168.0.29
+  num_healthy_workers: 7
+  off_policy_estimator: {}
+  perf:
+    cpu_util_percent: 88.74335142469471
+    gpu_util_percent0: 0.07244007236544552
+    ram_util_percent: 33.088647670737224
+    vram_util_percent0: 0.4960396039603959
+  pid: 5334
+  policy_reward_max: {}
+  policy_reward_mean: {}
+  policy_reward_min: {}
+  sampler_perf:
+    mean_env_wait_ms: 24.066866922590535
+    mean_inference_ms: 1.4325401966379505
+    mean_processing_ms: 1.140408031506185
+  time_since_restore: 53527.38790464401
+  time_this_iter_s: 3308.688728094101
+  time_total_s: 53527.38790464401
+  timestamp: 1594533897
+  timesteps_since_restore: 9821653
+  timesteps_this_iter: 105007
+  timesteps_total: 9821653
+  training_iteration: 190
+  trial_id: f42d4d30
+  
+[2m[36m(pid=5334)[0m 2020-07-12 02:04:57,348	WARNING ppo.py:144 -- The magnitude of your environment rewards are more than 840565.0x the scale of `vf_clip_param`. This means that it will take more than 840565.0 iterations for your value function to converge. If this is not intended, consider increasing `vf_clip_param`.
+== Status ==
+Memory usage on this node: 10.5/31.2 GiB
+Using FIFO scheduling algorithm.
+Resources requested: 8/8 CPUs, 0.6/1 GPUs, 0.0/16.31 GiB heap, 0.0/5.62 GiB objects
+Number of trials: 1 ({'RUNNING': 1})
+Result logdir: /home/jaaoliveira/ray_results/neurocuts_None
++-----------------------+----------+-------------------+------------------------------+----------------------------------------------------------------------+--------+------------------+-------------+--------------+
+| Trial name            | status   | loc               |   env_config/tree_gae_lambda | env_config/rules                                                     |   iter |   total time (s) |   timesteps |       reward |
+|-----------------------+----------+-------------------+------------------------------+----------------------------------------------------------------------+--------+------------------+-------------+--------------|
+| PPO_tree_env_f42d4d30 | RUNNING  | 192.168.0.29:5334 |                         0.95 | /home/jaaoliveira/src/neurocutseb/neurocuts-master/classbench/fw1_1k |    190 |          53527.4 |     9821653 | -8.40565e+06 |
++-----------------------+----------+-------------------+------------------------------+----------------------------------------------------------------------+--------+------------------+-------------+--------------+
+
+Result for PPO_tree_env_f42d4d30:
+  custom_metrics:
+    bytes_per_rule_max: 530647.5221703617
+    bytes_per_rule_mean: 219913.73888127183
+    bytes_per_rule_min: 431.72184947491246
+    bytes_per_rule_valid_max: 1561.5468203033838
+    bytes_per_rule_valid_mean: .nan
+    bytes_per_rule_valid_min: 431.72184947491246
+    exceeded_max_depth_max: 7410
+    exceeded_max_depth_mean: 3207.21
+    exceeded_max_depth_min: 0
+    memory_access_max: 501
+    memory_access_mean: 342.42
+    memory_access_min: 38
+    memory_access_valid_max: 501
+    memory_access_valid_mean: .nan
+    memory_access_valid_min: 38
+    nodes_remaining_max: 9862
+    nodes_remaining_mean: 4269.35
+    nodes_remaining_min: 0
+    num_nodes_max: 45585
+    num_nodes_mean: 26370.16
+    num_nodes_min: 555
+    num_nodes_valid_max: 3307
+    num_nodes_valid_mean: .nan
+    num_nodes_valid_min: 555
+    num_splits_max: 15001
+    num_splits_mean: 9551.03
+    num_splits_min: 182
+    num_splits_valid_max: 1430
+    num_splits_valid_mean: .nan
+    num_splits_valid_min: 182
+    partition_fraction_max: 0.0
+    partition_fraction_mean: 0.0
+    partition_fraction_min: 0.0
+    rules_remaining_max: 838
+    rules_remaining_mean: 504.34
+    rules_remaining_min: 0
+    tree_depth_max: 501
+    tree_depth_mean: 342.42
+    tree_depth_min: 38
+    tree_depth_valid_max: 501
+    tree_depth_valid_mean: .nan
+    tree_depth_valid_min: 38
+  date: 2020-07-12_03-00-03
+  done: false
+  episode_len_mean: 9551.03
+  episode_reward_max: -8688.0
+  episode_reward_mean: -9698662.17
+  episode_reward_min: -18771338.0
+  episodes_this_iter: 7
+  episodes_total: 26025
+  experiment_id: 8a05d07432a8467d9d7d880144974f74
+  experiment_tag: 0_rules=_home_jaaoliveira_src_neurocutseb_neurocuts-master_classbench_fw1_1k,tree_gae_lambda=0.95
+  hostname: kubuntu
+  info:
+    grad_time_ms: 17678.087
+    learner:
+      default_policy:
+        cur_kl_coeff: 0.004510167986154556
+        cur_lr: 4.999999873689376e-05
+        entropy: 3.178498853007028e-10
+        entropy_coeff: 0.009999999776482582
+        kl: -1.1052800385005779e-12
+        policy_loss: 1.2289555343159009e-05
+        total_loss: 44329120.0
+        vf_explained_var: 0.012374453246593475
+        vf_loss: 44329120.0
+    load_time_ms: 152.971
+    num_steps_sampled: 9926660
+    num_steps_trained: 9827000
+    sample_time_ms: 2015322.673
+    update_time_ms: 6.355
+  iterations_since_restore: 191
+  node_ip: 192.168.0.29
+  num_healthy_workers: 7
+  off_policy_estimator: {}
+  perf:
+    cpu_util_percent: 89.0337638794471
+    gpu_util_percent0: 0.0686267845003399
+    ram_util_percent: 33.51860412417856
+    vram_util_percent0: 0.4960396039603961
+  pid: 5334
+  policy_reward_max: {}
+  policy_reward_mean: {}
+  policy_reward_min: {}
+  sampler_perf:
+    mean_env_wait_ms: 24.9098188393689
+    mean_inference_ms: 1.433400388897264
+    mean_processing_ms: 1.1446163729811674
+  time_since_restore: 56833.39508152008
+  time_this_iter_s: 3306.007176876068
+  time_total_s: 56833.39508152008
+  timestamp: 1594537203
+  timesteps_since_restore: 9926660
+  timesteps_this_iter: 105007
+  timesteps_total: 9926660
+  training_iteration: 191
+  trial_id: f42d4d30
+  
+[2m[36m(pid=5334)[0m 2020-07-12 03:00:03,405	WARNING ppo.py:144 -- The magnitude of your environment rewards are more than 969866.0x the scale of `vf_clip_param`. This means that it will take more than 969866.0 iterations for your value function to converge. If this is not intended, consider increasing `vf_clip_param`.
+== Status ==
+Memory usage on this node: 10.6/31.2 GiB
+Using FIFO scheduling algorithm.
+Resources requested: 8/8 CPUs, 0.6/1 GPUs, 0.0/16.31 GiB heap, 0.0/5.62 GiB objects
+Number of trials: 1 ({'RUNNING': 1})
+Result logdir: /home/jaaoliveira/ray_results/neurocuts_None
++-----------------------+----------+-------------------+------------------------------+----------------------------------------------------------------------+--------+------------------+-------------+--------------+
+| Trial name            | status   | loc               |   env_config/tree_gae_lambda | env_config/rules                                                     |   iter |   total time (s) |   timesteps |       reward |
+|-----------------------+----------+-------------------+------------------------------+----------------------------------------------------------------------+--------+------------------+-------------+--------------|
+| PPO_tree_env_f42d4d30 | RUNNING  | 192.168.0.29:5334 |                         0.95 | /home/jaaoliveira/src/neurocutseb/neurocuts-master/classbench/fw1_1k |    191 |          56833.4 |     9926660 | -9.69866e+06 |
++-----------------------+----------+-------------------+------------------------------+----------------------------------------------------------------------+--------+------------------+-------------+--------------+
+
+Result for PPO_tree_env_f42d4d30:
+  custom_metrics:
+    bytes_per_rule_max: 530647.5221703617
+    bytes_per_rule_mean: 257028.3777071178
+    bytes_per_rule_min: 434.17605017502916
+    bytes_per_rule_valid_max: 1561.5468203033838
+    bytes_per_rule_valid_mean: .nan
+    bytes_per_rule_valid_min: 434.17605017502916
+    exceeded_max_depth_max: 7410
+    exceeded_max_depth_mean: 3716.81
+    exceeded_max_depth_min: 0
+    memory_access_max: 501
+    memory_access_mean: 374.81
+    memory_access_min: 38
+    memory_access_valid_max: 501
+    memory_access_valid_mean: .nan
+    memory_access_valid_min: 38
+    nodes_remaining_max: 9862
+    nodes_remaining_mean: 4950.17
+    nodes_remaining_min: 0
+    num_nodes_max: 45585
+    num_nodes_mean: 29481.44
+    num_nodes_min: 555
+    num_nodes_valid_max: 3307
+    num_nodes_valid_mean: .nan
+    num_nodes_valid_min: 555
+    num_splits_max: 15001
+    num_splits_mean: 10588.04
+    num_splits_min: 182
+    num_splits_valid_max: 1430
+    num_splits_valid_mean: .nan
+    num_splits_valid_min: 182
+    partition_fraction_max: 0.0
+    partition_fraction_mean: 0.0
+    partition_fraction_min: 0.0
+    rules_remaining_max: 838
+    rules_remaining_mean: 563.0
+    rules_remaining_min: 0
+    tree_depth_max: 501
+    tree_depth_mean: 374.81
+    tree_depth_min: 38
+    tree_depth_valid_max: 501
+    tree_depth_valid_mean: .nan
+    tree_depth_valid_min: 38
+  date: 2020-07-12_03-55-01
+  done: true
+  episode_len_mean: 10588.04
+  episode_reward_max: -8744.0
+  episode_reward_mean: -10991683.99
+  episode_reward_min: -18771338.0
+  episodes_this_iter: 7
+  episodes_total: 26032
+  experiment_id: 8a05d07432a8467d9d7d880144974f74
+  experiment_tag: 0_rules=_home_jaaoliveira_src_neurocutseb_neurocuts-master_classbench_fw1_1k,tree_gae_lambda=0.95
+  hostname: kubuntu
+  info:
+    grad_time_ms: 18925.917
+    learner:
+      default_policy:
+        cur_kl_coeff: 0.002255083993077278
+        cur_lr: 4.999999873689376e-05
+        entropy: 7.089798192971841e-10
+        entropy_coeff: 0.009999999776482582
+        kl: -1.0565819053010017e-11
+        policy_loss: 1.226221866090782e-05
+        total_loss: 44240636.0
+        vf_explained_var: 0.015309463255107403
+        vf_loss: 44240636.0
+    load_time_ms: 162.507
+    num_steps_sampled: 10031667
+    num_steps_trained: 9932000
+    sample_time_ms: 2326529.34
+    update_time_ms: 6.42
+  iterations_since_restore: 192
+  node_ip: 192.168.0.29
+  num_healthy_workers: 7
+  off_policy_estimator: {}
+  perf:
+    cpu_util_percent: 89.24773709347284
+    gpu_util_percent0: 0.06825335455992723
+    ram_util_percent: 33.88758244257448
+    vram_util_percent0: 0.49603960396039604
+  pid: 5334
+  policy_reward_max: {}
+  policy_reward_mean: {}
+  policy_reward_min: {}
+  sampler_perf:
+    mean_env_wait_ms: 25.874766375281883
+    mean_inference_ms: 1.4344534166483285
+    mean_processing_ms: 1.1497696153370096
+  time_since_restore: 60131.25180220604
+  time_this_iter_s: 3297.856720685959
+  time_total_s: 60131.25180220604
+  timestamp: 1594540501
+  timesteps_since_restore: 10031667
+  timesteps_this_iter: 105007
+  timesteps_total: 10031667
+  training_iteration: 192
+  trial_id: f42d4d30
+  
+[2m[36m(pid=5334)[0m 2020-07-12 03:55:01,287	WARNING ppo.py:144 -- The magnitude of your environment rewards are more than 1099168.0x the scale of `vf_clip_param`. This means that it will take more than 1099168.0 iterations for your value function to converge. If this is not intended, consider increasing `vf_clip_param`.
+== Status ==
+Memory usage on this node: 10.7/31.2 GiB
+Using FIFO scheduling algorithm.
+Resources requested: 0/8 CPUs, 0.0/1 GPUs, 0.0/16.31 GiB heap, 0.0/5.62 GiB objects
+Number of trials: 1 ({'TERMINATED': 1})
+Result logdir: /home/jaaoliveira/ray_results/neurocuts_None
++-----------------------+------------+-------+------------------------------+----------------------------------------------------------------------+--------+------------------+-------------+--------------+
+| Trial name            | status     | loc   |   env_config/tree_gae_lambda | env_config/rules                                                     |   iter |   total time (s) |   timesteps |       reward |
+|-----------------------+------------+-------+------------------------------+----------------------------------------------------------------------+--------+------------------+-------------+--------------|
+| PPO_tree_env_f42d4d30 | TERMINATED |       |                         0.95 | /home/jaaoliveira/src/neurocutseb/neurocuts-master/classbench/fw1_1k |    192 |          60131.3 |    10031667 | -1.09917e+07 |
++-----------------------+------------+-------+------------------------------+----------------------------------------------------------------------+--------+------------------+-------------+--------------+
+
+== Status ==
+Memory usage on this node: 10.7/31.2 GiB
+Using FIFO scheduling algorithm.
+Resources requested: 0/8 CPUs, 0.0/1 GPUs, 0.0/16.31 GiB heap, 0.0/5.62 GiB objects
+Number of trials: 1 ({'TERMINATED': 1})
+Result logdir: /home/jaaoliveira/ray_results/neurocuts_None
++-----------------------+------------+-------+------------------------------+----------------------------------------------------------------------+--------+------------------+-------------+--------------+
+| Trial name            | status     | loc   |   env_config/tree_gae_lambda | env_config/rules                                                     |   iter |   total time (s) |   timesteps |       reward |
+|-----------------------+------------+-------+------------------------------+----------------------------------------------------------------------+--------+------------------+-------------+--------------|
+| PPO_tree_env_f42d4d30 | TERMINATED |       |                         0.95 | /home/jaaoliveira/src/neurocutseb/neurocuts-master/classbench/fw1_1k |    192 |          60131.3 |    10031667 | -1.09917e+07 |
++-----------------------+------------+-------+------------------------------+----------------------------------------------------------------------+--------+------------------+-------------+--------------+
+
